@@ -1,4 +1,4 @@
-# README.md Submission for Soteria
+# Soteria
 This website was created as the final project for Harvard's CS50 in the fall of 2020 and was coded jointly with Jack Cogbill. I have made a [video demonstration](https://www.youtube.com/watch?v=86tvRU0rpKo) of the website and its common usage. 
 
 
