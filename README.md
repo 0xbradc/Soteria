@@ -25,7 +25,7 @@ In order to compile and run our website, you will need to download a view depend
 
 # Technical Description
 
-Soteria utilizes two APIs--Google 
+Soteria utilizes two APIs--Google Safe Browsing API and URLScan. Together, the site cross-checks security vulnerabilities from the URLs that are inputted.
 
 
 # Website Description
