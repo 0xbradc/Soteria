@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+
+{% block body %}
+    <div class="container">
+        <div class="section">
+
+            {% if error_message | length > 0 %}
+                <div style="color: red;">
+                    <h2>Error</h2>
+                    <p>{{ error_message }}</p>
+                </div>
+            {% endif %}
+
+            <h2>Inputted URL</h2>
+            <p>{{ url }}</p>
+
+            {% if risk_level | length > 0 %}
+                <div>
+                    <h2>Overall Risk Level</h2>
+                    <p>{{ risk_level | safe }}</p>
+                </div>
+            {% endif %}
+
+            {% if google_message | length > 0 %}
+                <div>
+                    <h3>Google API</h3>
+                    <p>{{ google_message | safe}}</p>
+
+                    {% if google_vulnerabilities | length > 0 %}
+                        <p>
+                            This website is at risk for
+                            {% for item in google_vulnerabilities %}
+                                {{ item | safe}},
+                            {% endfor %}
+                        </p>
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            {% if urlscan_message | length > 0 %}
+                <div>
+                    <h3>URLscan.io API</h3>
+                    <p>{{ urlscan_message | safe}}</p>
+
+                    {% if urlscan_vulnerabilities | length > 0 %}
+                        <p>
+                            This website is at risk for
+                            {% for item in urlscan_vulnerabilities %}
+                                {{ item | safe}}
+                            {% endfor %}
+                        </p>
+                    {% endif %}
+                </div>
+            {% endif %}
+
+        </div>
+    </div>
+
+    <!-- Spacing and horizontal line -->
+    <br>
+    <hr>
+    <br>
+
+    <!-- Additional Search function -->
+    <div class="container" style="padding-bottom: 20px;">
+        <div class="section">
+            <h2>Additional Search</h2>
+
+            <form action="/" method="post" id="form">
+                <input autocomplete="off" name="url" placeholder="Desired website URL" type="text">
+                <input type="submit" value="Scan Website">
+            </form>
+
+            <br>
+
+            <p>If you would like to learn more about possible website vulnerabilities, click <a href="/vulnerabilitydictionary">here.</a></p>
+        </div>
+    </div>
+{% endblock %}

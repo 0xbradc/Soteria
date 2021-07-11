@@ -1,0 +1,31 @@
+<!-- This functions as a secondary template for the vulnerability learning pages -->
+{% extends "layout.html" %}
+
+{% block title %}
+    Vulnerability Dictionary
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="container">
+        <div class="section">
+            {% block info %}
+            {% endblock %}
+        </div>
+    </div>
+
+    <!-- Vulnerability Dictionary -->
+    <div class="container">
+        <div class="section" style="align-content: space-between">
+            <h2>Vulnerability Dictionary</h2>
+            <p><a href="/malware">Malware Explanation</a></p>
+            <p><a href="/socialengineering">Social Engineering Explanation</a></p>
+            <p><a href="/pha">Potentially Harmful Application (PHA) Explanation</a></p>
+        </div>
+    </div>
+
+    <!-- Footing Space -->
+    <br><br><br>
+
+{% endblock %}

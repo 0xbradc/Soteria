@@ -1,0 +1,35 @@
+{% extends "dictionary_layout.html" %}
+
+{% block title %}
+    PHA
+{% endblock %}
+
+{% block info %}
+    <h2>Potentially Harmful Application (PHA)</h2>
+    <p id="information">
+        <b>Definition</b>
+        <br><br>
+        Potentially Harmful Applications (PHAs) are apps that could put users, user data, or devices at risk. These apps are often generically referred to as malware. We've developed a range of categories for different types of PHAs, including trojans, phishing, and spyware apps, and we are continuously updating and adding new categories.
+        <br><br>
+        <b>Potentially harmful?</b>
+        <br><br>
+        There is some confusion around the ambiguity of the word potentially when used to describe malicious apps. Google Play Protect removes apps that have been flagged as Potentially Harmful because the app does contain malicious behavior not because we are simply unsure if the app is harmful or not. The word potentially is used here because malicious apps function differently depending on a variety of variables thus an app that is harmful to one Android device might not pose a risk at all to another Android device. For example, a device running the latest version of Android is not affected by harmful apps which use deprecated APIs to perform malicious behavior but a device that is still running a very early version of Android might be at risk. Mobile billing fraud poses a risk to devices connected to service carriers but devices which only connect to WIFI are not affected by these apps.
+        Apps are flagged as a PHA if they clearly pose a risk to some or all Android devices and users.
+        <br><br>
+        <b>User-wanted PHAs</b>
+        <br><br>
+        Some apps that can weaken or disable Android security features aren't categorized as PHAs. These apps provide functionality that users want, such as rooting the device and other development features. Even though these apps are potentially harmful, users install them intentionally, so Google Play Protect manages them differently than other PHAs.
+        When a user begins to installI an app that's classified as user-wanted, Google Play Protect warns the user of the app's potential hazards just once. The user can decide whether to continue with the installation. After installation, the user-wanted classifications prevents Google Play Protect from sending additional warnings, so there's no disruption to the user experience.
+        <br><br>
+        <b>Classifications</b>
+        <br><br>
+        There are several categories for classifying PHAs that help Play Protect detect them and determine the right action to take. These categories include malicious apps like trojans, spyware, and phishing apps, as well as user-wanted apps. If Play Protect detects a PHA, it displays a warning. For certain malicious apps, Play Protect automatically disables or removes the app. When Play Protect detects that a PHA contains features from multiple categories, it classifies the app based on the most harmful characteristics. For example, if an app applies to both ransomware and spyware categories, the Verify Apps message identifies it as ransomware.
+        <br><br>
+        Information found with <a href="https://developers.google.com/android/play-protect/potentially-harmful-applications" target="_blank">Google Play Protect</a>
+    </p>
+
+    <!-- Spacing and horizontal line -->
+    <br>
+    <hr>
+    <br>
+{% endblock %}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<!-- This is the main template for all HTML files in the project -->
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+
+        <!-- https://favicon.io/emoji-favicons/shield -->
+        <link href="/static/favicon.ico" rel="icon">
+
+        <title>Soteria - {% block title %}{% endblock %}</title>
+
+        <!-- Loading Bar script -->
+        <script>
+            // Listens for loading
+            document.addEventListener('DOMContentLoaded', function () {
+                document.getElementById("form").addEventListener("submit", move);
+            });
+
+            var i = 0;
+            function move() {
+                // Hides previous content and shows the loading bar
+                document.getElementById("loadingBar").removeAttribute("hidden");
+                document.getElementById("content").setAttribute("hidden", "true");
+
+                // Function runs to create loading bar
+                if (i == 0) {
+                    i = 1;
+                    var elem = document.getElementById("myBar");
+                    var width = 1;
+
+                    frame = function() {
+                        if (width >= 100) {
+                            clearInterval(id);
+                            i = 0;
+                        }
+                        else {
+                            width++;
+                            elem.style.width = width + "%";
+                            elem.innerHTML = width + "%";
+                        }
+                    };
+
+                    var id = setInterval(frame, 270);
+                }
+            }
+        </script>
+
+        <!-- Sidebar Script -->
+        <script>
+            // Boolean for keeping track of the drawer status
+            var open = false;
+
+            function checkNav() {
+                if (open == false) {
+                    document.getElementById("mySidebar").style.width = "250px";
+                    document.getElementById("main").style.marginLeft = "250px";
+                    open = true;
+                }
+                else {
+                    document.getElementById("mySidebar").style.width = "0";
+                    document.getElementById("main").style.marginLeft= "0";
+                    open = false;
+                }
+            }
+
+            function openNav() {
+                document.getElementById("mySidebar").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+                open = true;
+            }
+
+            function closeNav() {
+                document.getElementById("mySidebar").style.width = "0";
+                document.getElementById("main").style.marginLeft= "0";
+                open = false;
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <div id="page-container">
+
+            <!-- Sidebar element -->
+            <div id="mySidebar" class="sidebar">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+              <a href="/register">Register</a>
+              <a href="/">Home</a>
+              <a href="/vulnerabilitydictionary">Vulnerability Dictionary</a>
+              <a href="/userdata">User History</a>
+              <a href="/sources">Sources</a>
+              <a href="/logout">Logout</a>
+            </div>
+
+            <!-- Title Section -->
+            <div class="jumbotron" style="display: flex; justify-content: space-between; align-content: center;">
+                <div id="main">
+                    <button class="openbtn" onclick="checkNav()">☰</button>
+                </div>
+                <h1>Soteria</h1>
+            </div>
+
+            <!-- Loading Bar -->
+            <div class="container" id="loadingBar" hidden>
+                <div class="section">
+                    <div id="myProgress">
+                      <div id="myBar">1%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- For most content -->
+            <div id="content">
+                {% block body %}{% endblock %}
+            </div>
+
+            <!-- For login and register -->
+            <main class="container p-5">
+                {% block main %}{% endblock %}
+            </main>
+
+            <!-- Footing Space -->
+            <div class="container">
+                <br><br><br>
+            </div>
+
+            <!-- Footer element -->
+            <footer class="footer">
+                Made by Brad Campbell and Jack Cogbill<br>
+                Copyright 2020 &#174;
+            </footer>
+        </div>
+    </body>
+</html>

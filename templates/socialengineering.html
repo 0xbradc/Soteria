@@ -1,0 +1,41 @@
+{% extends "dictionary_layout.html" %}
+
+{% block title %}
+    Social Engineering
+{% endblock %}
+
+{% block info %}
+    <h2>Social Engineering</h2>
+    <p id="information">
+        <b>Definition</b>
+        <br><br>
+        A social engineering attack is when a web user is tricked into doing something dangerous online.
+        <br><br>
+        <b>There are different types of social engineering attacks:</b>
+        <br>
+    </p>
+
+    <ul id="information">
+        <li><b>Phishing:</b> The site tricks users into revealing their personal information (for example, passwords, phone numbers, or credit cards). In this case, the content pretends to act, or looks and feels, like a trusted entity — for example, a browser, operating system, bank, or government.</li>
+        <li><b>Deceptive content:</b> The content tries to trick you into doing something you’d only do for a trusted entity — for example, sharing a password, calling tech support, downloading software, or the content contains an ad that falsely claims that device software is out-of-date, prompting users into installing unwanted software.</li>
+        <li><b>Insufficiently labeled third-party services:</b> A third-party service is someone that operates a site or service on behalf of another entity. If you (third party) operate a site on behalf of another (first) party without making the relationship clear, that might be flagged as social engineering. For example, if you (first party) run a charity website that uses a donation management website (third party) to handle collections for your site, the donation site must clearly identify that it is a third-party platform acting on behalf of that charity site, or else it could be considered social engineering</li>
+    </ul>
+
+    <p id="information">
+        <br>
+        <b>Social engineering in embedded content</b>
+        <br><br>
+        Social engineering can also show up in content that is embedded in otherwise benign websites, usually in ads. Embedded social engineering content is a policy violation for the host page.
+        <br><br>
+        Sometimes embedded social engineering content will be visible to users on the host page. In other cases, the host site does not contain any visible ads, but leads users to social engineering pages via pop-ups, pop-unders, or other types of redirection. In both cases, this type of embedded social engineering content will result in a policy violation for the host page.
+    </p>
+
+    <p id="information">
+        Information found with <a href="https://developers.google.com/search/docs/advanced/security/social-engineering" target="_blank">Google Play Protect</a>
+    </p>
+
+    <!-- Spacing and horizontal line -->
+    <br>
+    <hr>
+    <br>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    User History
+{% endblock %}
+
+
+{% block body %}
+    <div class="container">
+        <div class="section">
+
+            <h2>User History</h2>
+
+            <!-- User history table -->
+            <table>
+              <tr>
+                <th>Website Name</th>
+                <th>Vulnerability</th>
+              </tr>
+
+                {% for data in userdata_list %}
+                      {% for vuln in data["vulnerabilities"] %}
+                        <tr>
+                          <td>{{ data["url"] }}</td>
+
+                          <td>{{ vuln }}</td>
+
+                        </tr>
+                    {% endfor %}
+                {% endfor %}
+            </table>
+
+        </div>
+    </div>
+
+    <!-- Spacing and horizontal line -->
+    <br>
+    <hr>
+    <br>
+
+    <!-- Additional Search function -->
+    <div class="container" style="padding-bottom: 20px;">
+        <div class="section">
+            <h2>Additional Search</h2>
+
+            <form action="/" method="post" id="form">
+                <input autocomplete="off" name="url" placeholder="Desired website URL" type="text">
+                <input type="submit" value="Scan Website">
+            </form>
+
+            <br>
+
+            <p>If you would like to learn more about possible website vulnerabilities, click <a href="/vulnerabilitydictionary">here.</a></p>
+        </div>
+    </div>
+{% endblock %}

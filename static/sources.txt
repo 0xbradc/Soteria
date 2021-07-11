@@ -1,0 +1,28 @@
+SOURCES
+
+Footer code:
+https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/
+
+Login and registration code:
+Harvard CS50 Course distribution code
+
+HTML and Python Integration:
+https://stackoverflow.com/questions/41243622/return-html-code-from-python-script-to-html-via-flask-theory/41243732
+
+Jinja Help:
+https://jinja.palletsprojects.com/en/2.11.x/templates/#
+
+Flask Help:
+https://stackoverflow.com/questions/17057191/redirect-while-passing-arguments
+
+Secret Key Error Help:
+https://stackoverflow.com/questions/35657821/the-session-is-unavailable-because-no-secret-key-was-set-set-the-secret-key-on/35657961
+
+JS Function Syntax Help:
+https://stackoverflow.com/questions/56378720/function-returns-an-error-eslint-move-function-to-body-root
+
+General HTML Help:
+https://www.w3schools.com/
+
+Sidebar Distribution Code:
+https://www.w3schools.com/howto/howto_js_collapse_sidebar.asp

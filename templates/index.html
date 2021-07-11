@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block body %}
+
+    <!-- Loading Bar -->
+    <div class="container" id="loadingBar" hidden>
+        <div class="section">
+            <div id="myProgress">
+              <div id="myBar">1%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Input Section -->
+    <div class="container" id="content">
+        <div class="section">
+
+            <h2>Input a website URL and click "Scan Website" in order to find the security of your desired website</h2>
+
+            <br>
+
+            <form action="/" method="post" id="form">
+                <input autocomplete="off" autofocus name="url" placeholder="Desired website URL" type="text">
+                <input type="submit" value="Scan Website">
+            </form>
+
+            <br>
+
+        </div>
+    </div>
+
+{% endblock %}
