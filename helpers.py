@@ -50,7 +50,8 @@ def urlscan_api(input_url):
     global count
 
     try:
-        headers = {'API-Key':'e138677d-28fd-4a9e-8ffd-0fba8b942aa1','Content-Type':'application/json'}
+        urlscan_api_key = input("Please input your URLScan API key")
+        headers = {'API-Key': urlscan_api_key,'Content-Type':'application/json'}
         data = {"url": input_url, "visibility": "public"}
         response = requests.post('https://urlscan.io/api/v1/scan/', headers=headers, data=json.dumps(data))
         response.raise_for_status()
@@ -96,6 +97,7 @@ def urlscan_api(input_url):
 def google_api(input_url):
     global count
     headers = {'Content-Type':'application/json'}
+    urlscan_api_key = input("Please input your Google Safe Browsing API key")
     post_url = f"https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyBU3AL1VIV-UCZ0kuDVVbWzWFAdhlrNKuM"
     data = {
         "client": {
